@@ -42,6 +42,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>company-management-web</finalName>
+		<finalName>companymanagement</finalName>
 	</build>
 </project>

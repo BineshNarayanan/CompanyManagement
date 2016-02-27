@@ -23,7 +23,7 @@ public class AppController {
 		return "Welcome to CompanyManagement Portal";
 	}
 
-	@RequestMapping(value = "/companymanagement/company/{companyId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/company/{companyId}", method = RequestMethod.GET)
 	public @ResponseBody Company company(@PathVariable String companyId) {
 		Company company = new Company(1, "Morningstar");
 		if (companyId.equals("2")) {
@@ -32,19 +32,19 @@ public class AppController {
 		return company;
 	}
 	
-	@RequestMapping(value = "/companymanagement/company", method = RequestMethod.POST,consumes = "application/json")
+	@RequestMapping(value = "/company", method = RequestMethod.POST,consumes = "application/json")
 	public @ResponseBody Company addCompany(@RequestBody Company company) {
 		//call service and add the company
 		return company;
 	}
 	
-	@RequestMapping(value = "/companymanagement/company/{companyId}", method = RequestMethod.PUT,consumes = "application/json")
+	@RequestMapping(value = "/company/{companyId}", method = RequestMethod.PUT,consumes = "application/json")
 	public @ResponseBody Company updateCompany(@PathVariable String companyId, @RequestBody Company company) {
 		//call service and update the company
 		return company;
 	}
 	
-	@RequestMapping(value = "/companymanagement/company/{companyId}", method = RequestMethod.POST,consumes = "application/json")
+	@RequestMapping(value = "/company/{companyId}", method = RequestMethod.POST,consumes = "application/json")
 	public @ResponseBody Company addOwners(@PathVariable String companyId, @RequestBody Owner owner) {
 		//call service get the company
 		//add the owners and update;
@@ -55,7 +55,7 @@ public class AppController {
 		return company;
 	}
 
-	@RequestMapping(value = "/companymanagement/company", method = RequestMethod.GET)
+	@RequestMapping(value = "/company", method = RequestMethod.GET)
 	public @ResponseBody List<Company> listCompanies() {
 		List<Company> companyList = new ArrayList<Company>(0);
 		Company company_1 = new Company(1, "Morningstar");
